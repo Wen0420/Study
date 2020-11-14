@@ -12,6 +12,8 @@ print("I love u" + 8)#can only concatenate str (not "int") to str。
 print("I love u" + "8")
 print("I love u" + str(8))
 
+
+#P3
 print("---工作室---")
 temp = input("不妨猜一下小甲鱼现在心里想的是哪个数字：")
 guess = int(temp)
@@ -21,4 +23,9 @@ if guess == 8:
 else:
     print("猜错了，小甲鱼现在心里想的是8！")
 print("游戏结束，不玩啦^_^")
+
+#看一下python 有多少个内置函数
+dir(__builtins__)
+
+help(input)
 
