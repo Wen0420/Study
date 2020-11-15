@@ -29,3 +29,23 @@ dir(__builtins__)
 
 help(input)
 
+#P4
+print('let\'s go')
+
+print("let'''s go")
+
+str = 'C:\now'
+print(str)
+
+#利用反斜杠对自身进行转义
+str = 'C:\\now'
+print(str)
+
+str = r'C:\now'
+print(str)
+
+str  = '''guaji
+guaji
+guaji'''
+print(str)#打印出来相当于每个guaji后面都加了\n
+
