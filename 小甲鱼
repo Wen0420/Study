@@ -28,6 +28,8 @@ int 函数可以把字符串类型的数字进行转换成可以比较大小和�
 字符串
     引号内的一切东西
 
+    字符串 + 就是拼接
+
     如果字符串中需要出现但引号或双引号怎么办?
         -使用转义符号 \ e.g. let's go => let\'s go
 
@@ -62,6 +64,64 @@ int 函数可以把字符串类型的数字进行转换成可以比较大小和�
             3>2 and 1<2
             true
 
+#P6 数据类型
+        数值类型：整形 int() ;浮点数转int a= 5.99, int(a) = 5
+        浮点型： 小数 float() 字符串或整数转换为浮点型 float('520') = 520.0
+        e记法：科学计数法（会变成浮点型）
+        布尔类型
+        字符串 str() 将数字或其他类型转换成字符串类型 str(a) = '5.99'
+    判断数据类型：
+        type()
+            a = '520'
+            > class 'str'
+            type(5.2)
+            >class 'float'
+            type(true)
+            >class 'bool'
+            type(5e15)
+            >class 'float'
+
+       isinstance() 待确定和指定类型的参数，返回的是布尔代数的值， ture 是两个参数类型一致 false是两个参数类型不一致
+            a = '小甲鱼'
+            isinstance(a, str)
+            >True
+            isinstance(320, int)
+            >True
+
+#7 常用操作符
+       算术操作符
+           a = 5
+           a = a + 3 等于 a += 3 指 a 加的部分是3
+           a = b = c = d = 10 指  a = 10, b = 10,...
+            // floor 地板除法 整数除以整数等于整数
+            %  取余
+            ** 幂运算
+       逻辑操作符
+            and 左右为真才为真，其余为假
+            or 左或右任一为真即为真， 都为假即假
+            not 取相反的布尔类型的值
+
+
+     input() 的返回值始终是字符串，所以 type(temp) 永远是 <class 'str'>
+        s 为字符串：
+
+        s.isalnum()  所有字符都是数字或者字母，为真返回 True，否则返回 False。
+
+        s.isalpha()   所有字符都是字母，为真返回 True，否则返回 False。
+
+        s.isdigit()     所有字符都是数字，为真返回 True，否则返回 False。
+
+        s.islower()    所有字符都是小写，为真返回 True，否则返回 False。
+
+        s.isupper()   所有字符都是大写，为真返回 True，否则返回 False。
+
+        s.istitle()      所有单词都是首字母大写，为真返回 True，否则返回 False。
+
+        s.isspace()   所有字符都是空白字符，为真返回 True，否则返回 False。
+
+        >>> s = 'I LOVE FISHC'
+        >>> s.isupper()
+        >>> True
 
 
 
