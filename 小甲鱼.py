@@ -336,3 +336,120 @@ else:
 # print('爱因斯坦所求阶梯为;',x)
 # i=0
 
+#
+# #9 分支与循环2
+#     题目：
+#     按照100分制，90分以上成绩为A， 80到90分成绩为B， 60到80成绩为C，60以下为D，
+#     写一个程序，当用户输入分数， 自动转换为ABCD的形式打印。
+#method 1
+score = int(input('请输入一个分数: '))
+if 100 >= score >= 90:
+    print('A')
+if 90 > score >= 80:
+    print('B')
+if 80 > score >= 60:
+    print("C")
+if 60 > score >= 0:
+    print("D")
+if score < 0 or score > 100:
+    print("输入错误！")
+
+#method 2
+score = int(input("请输入您的分数： "))
+if 100 >= score >= 90:
+    print('A')
+else:
+    if 90 > score >= 80:
+        print('B')
+    else:
+        if 80 > score >= 60:
+            print("C")
+        else:
+            if 60 > score >= 0:
+                print("D")
+            else:
+                print("输入错误！")
+
+#method 3
+score = int(input("请输入您的分数： "))
+if 100 >= score >= 90:
+    print('A')
+elif 90 > score >= 80:
+    print('B')
+elif 80 > score >= 60:
+    print('C')
+elif 60 > score >= 0:
+    print('D')
+else:
+    print("输入错误！")
+
+#9      条件表达式（三元操作符）-- 操作符指的就是操作数目
+#有了这个三元操作符的表达式，你就可以使用一条语句来完成以下的条件判断和赋值操作：
+x, y = 4, 5
+if x < y:
+    small = x
+else:
+    small = y
+#* 例子可以改进为
+small = x if x < y else y
+
+assert 3 > 4
+
+#10
+favourite = 'fish'
+for i in favourite:
+    print(i, end=' ')#end=''是不换行
+
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静']
+#[] 表示列表
+for each in member:
+    #for 后面是变量的名字，随便用一个就可以了
+    print(each, len(member))
+
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静']
+#[] 表示列表
+for each in member:
+    #for 后面是变量的名字，随便用一个就可以了
+    print(each, len(each))
+
+range(5)
+#range(0, 5) 返回一个range对象
+
+list(range(5))
+#list(BIF)变成一个列表显示出来
+#[0, 1, 2, 3, 4] 默认从0开始，但不包括5
+
+for i in range(5):
+    print(i)
+
+for i in range(2, 9):
+    print(i)
+# 2 是包含的，但不包括9
+
+for i in range(1, 10, 2):
+    print(i)
+
+#break
+#example
+bingo = "小甲鱼是帅哥"
+answer = input('请输入小甲鱼最想听的一句话：')
+
+while True:
+    if answer == bingo:
+        break
+    answer = input("抱歉，错了，请重新输入（答案正确才能退出游戏）：")
+
+print("哎哟，帅哦~")
+print("您真是小甲鱼肚子里的蛔虫啊")
+#while 循环它的值是一直为true的，当没有触发到break的时候它是不会跳出循环的
+
+#continue
+#例子
+for i in range(10):
+    if i%2 != 0:
+        print(i)
+        continue
+    i += 2
+    print(i)
+#i是偶数就+2输出，i是奇数就直接输出。 从0-9每个数对此操作，就会得到。
+
