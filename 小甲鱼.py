@@ -453,3 +453,185 @@ for i in range(10):
     print(i)
 #i是偶数就+2输出，i是奇数就直接输出。 从0-9每个数对此操作，就会得到。
 
+#homework 第007、008讲：了不起的分支和循环2
+#动动手1
+#请将以下代码修改为三元操作符实现：
+
+x, y, z = 6, 5, 4
+if x < y:
+    small = x
+    if z < small:
+        small = z
+elif y < z:
+    small = y
+else:
+    small = z
+
+#我尝试改写后的(不对)
+small = x if x < y else y
+small = y if y < z else z
+#答案：
+small = x if (x < y and x < z) else (y if y < z else z)
+
+
+#007 3
+x = 1
+y = 2
+z = 3
+x,y,z = z,y,x
+print(z,y,x)
+
+#007 4
+name = '小甲鱼'
+print('鱼' in name)#true
+
+name = '小甲鱼'
+print('肥鱼' in name)#False
+
+#试着改动一下用while
+name = 'Turtle'
+guess = input('Guess what his name is?')
+while True:
+    if guess == name:
+
+        break
+    guess = input('Then you guess wrong')
+print('awesome')
+
+#007 home work 动动手0
+#0. 视频中小甲鱼使用 if elif else 在大多数情况下效率要比全部使用 if 要高，但根据一般的统计规律，一个班的成绩一般服从正态分布，也就是说平均成绩一般集中在 70~80 分之间，因此根据统计规律，我们还可以改进下程序以提高效率。
+
+score = int(input('请输入一个分数：'))
+if 80 > score >= 60:
+    print('C')
+elif 90 > score >= 80:
+    print('B')
+elif 60 > score >= 0:
+    print('D')
+elif 100 >= score >= 90:
+    print('A')
+else:
+    print('输入错误！')
+
+#homework 第009讲：了不起的分支和循环3
+#0
+for i in range(0, 10, 2):
+    print('I Love FishC')
+
+#1
+for i in 5:
+    print('I Love FishC')
+#'int' object is not iterable
+
+#4
+print(range(10))#range(0, 10)
+for i in range(10):
+    print(i)
+
+for i in range(10):
+    print(i, end=' ')
+
+#7. 【学会提高代码的效率】你的觉得以下代码效率方面怎样？有没有办法可以大幅度改进(仍然使用while)？
+
+i = 0
+string = 'ILoveFishC.com'
+while i < len(string):
+    print(i)
+    i += 1
+#答案
+i = 0
+string = 'ILoveFishC.com'
+length = len(string)
+while i < length:
+    print(i)
+    i += 1
+
+#009 homework 动动手
+# 0. 设计一个验证用户密码程序，用户只有三次机会输入错误，不过如果用户输入的内容中包含"*"则不计算在内。
+#
+# 程序演示如图：
+#请输入密码：*****
+#密码中不能含有“*”！您还有3次机会！请输入密码：I Love***
+#密码中不能含有“*”！您还有3次机会！请输入密码：*** I Love you
+#密码中不能含有“*”！您还有3次机会！请输入密码：小甲鱼是帅哥
+#密码输入错误！您还有2次机会！请输入密码：呃。。。鱼c好棒！！
+#密码输入错误！您还有1次机会！请输入密码：FishC.com
+#密码正确，进入程序。。。。。。
+#
+#try
+passport = input('请输入密码')
+        #不确定了
+    #答案
+count = 3
+password = 'FishC.com'
+
+while count:
+    passwd = input('请输入密码：')
+    if passwd == password:
+        print('密码正确，进入程序......')
+        break
+    elif '*' in passwd:
+        print('密码中不能含有"*"号！您还有', count, '次机会！', end=' ')
+        continue
+    else:
+        print('密码输入错误！您还有', count-1, '次机会！', end=' ')
+    count -= 1
+#试一试
+key='千里共婵娟'
+i=3
+while i>0:
+    pwd = input('请输入密码：')
+    if '' in pwd:
+        print('密码不能含“”号，请输入密码：')
+    continue
+    else:
+        if key == pwd:
+            print('密码正确，载入中')
+        break
+            else:
+                print('密码错误，你还有'+str(i-1)+'次机会')
+    i-=1
+    else:
+print('你的机会已用完')
+
+# 1. 编写一个程序，求 100~999 之间的所有水仙花数。
+## 如果一个 3 位数等于其各位数字的立方和，则称这个数为水仙花数。例如：153 = 1^3 + 5^3 + 3^3，因此 153 就是一个水仙花数。
+#别人写的
+for a in range(1,10):
+    for b in range(10):
+        for c in range(10):
+            if a*100+b*10+c == a**3 + b**3 + c**3:
+                sun = a*100 + b*10 + c
+print(sun)#407
+#别人帮忙改进的
+num = 100
+while 100 <= num < 1000:
+    if num == (num % 10) ** 3 + (num // 100) ** 3 + ((num // 10) % 10) ** 3:
+        print(num)
+    num += 1
+
+#答案
+for i in range(100, 1000):
+    sum = 0
+    temp = i
+    while temp:
+        sum = sum + (temp%10) ** 3
+        temp //= 10         # 注意这里要使用地板除哦~
+    if sum == i:
+        print(i)
+#
+# 2. 三色球问题
+#
+#
+# 有红、黄、蓝三种颜色的球，其中红球 3 个，黄球 3 个，绿球 6 个。先将这 12 个球混合放在一个盒子中，从中任意摸出 8 个球，编程计算摸出球的各种颜色搭配。
+print('red\tyellow\tgreen')
+for red in range(0, 4):
+    for yellow in range(0, 4):
+        for green in range(2, 7):
+            if red + yellow + green == 8:
+                # 注意，下边不是字符串拼接，因此不用“+”哦~
+                print(red, '\t', yellow, '\t', green)
+
+#注释：range(2, 7) 是产生 [2, 3, 4, 5, 6] 这 5 个数，绿球不能是 1 个，因为如果绿球是 1 个的话，红球 + 黄球需要有 7 个才能符合题意，而红球和黄球每种只有 3 个，因此是 range(2, 7)
+#
+# 3. 请写下这一节课你学习到的内容：格式不限，回忆并复述是加强记忆的好方式！
