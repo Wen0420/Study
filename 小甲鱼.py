@@ -576,23 +576,6 @@ while count:
     else:
         print('密码输入错误！您还有', count-1, '次机会！', end=' ')
     count -= 1
-#试一试
-key='千里共婵娟'
-i=3
-while i>0:
-    pwd = input('请输入密码：')
-    if '' in pwd:
-        print('密码不能含“”号，请输入密码：')
-    continue
-    else:
-        if key == pwd:
-            print('密码正确，载入中')
-        break
-            else:
-                print('密码错误，你还有'+str(i-1)+'次机会')
-    i-=1
-    else:
-print('你的机会已用完')
 
 # 1. 编写一个程序，求 100~999 之间的所有水仙花数。
 ## 如果一个 3 位数等于其各位数字的立方和，则称这个数为水仙花数。例如：153 = 1^3 + 5^3 + 3^3，因此 153 就是一个水仙花数。
@@ -633,5 +616,163 @@ for red in range(0, 4):
                 print(red, '\t', yellow, '\t', green)
 
 #注释：range(2, 7) 是产生 [2, 3, 4, 5, 6] 这 5 个数，绿球不能是 1 个，因为如果绿球是 1 个的话，红球 + 黄球需要有 7 个才能符合题意，而红球和黄球每种只有 3 个，因此是 range(2, 7)
-#
-# 3. 请写下这一节课你学习到的内容：格式不限，回忆并复述是加强记忆的好方式！
+
+
+#P11
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静']
+member.append('福禄娃娃')
+print(member)
+print(len(member))
+
+member.append('竹林小溪', 'Crazy迷恋')
+#TypeError: append() takes exactly one argument (2 given)
+
+member.extend('竹林小溪', 'Crazy迷恋')
+#TypeError: append() takes exactly one argument (2 given)
+
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静']
+member.extend(['竹林小溪', 'Crazy迷恋'])
+print(member)
+
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静']
+member.insert(1, '牡丹')
+print(member)
+
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静']
+member.insert(0, '牡丹')
+print(member)
+
+#p12 数组2 列表的其它常用方法
+member = ['小甲鱼', '小布丁', '黑夜', '迷途', '怡静', '竹林小溪', 'Crazy迷恋']
+print(member[0])
+
+    #如何交换 牡丹和小甲鱼的位置？
+        #利用一个中间值，一个零时变量temp 把两者做个交换，首先把小甲鱼这个字符串给了temp这个变量
+            #再把牡丹赋值到小甲鱼这个位置
+member = ['小甲鱼', '牡丹', '小布丁', '黑夜', '迷途', '怡静', '竹林小溪', 'Crazy迷恋']
+temp = member[0]
+member[0] = member[1]
+print(member)#['牡丹', '牡丹', '小布丁', '黑夜', '迷途', '怡静', '竹林小溪', 'Crazy迷恋']
+    #此时小甲在temp里面
+member[1] = temp
+print(member)#['牡丹', '小甲鱼', '小布丁', '黑夜', '迷途', '怡静', '竹林小溪', 'Crazy迷恋']
+
+member = ['牡丹', '小甲鱼', '小布丁', '黑夜', '迷途', '怡静', '竹林小溪', 'Crazy迷恋']
+member.remove('怡静')
+print(member)#['牡丹', '小甲鱼', '小布丁', '黑夜', '迷途', '竹林小溪', 'Crazy迷恋']
+member.remove('小鱼儿')#ValueError: list.remove(x): x not in list
+
+member = ['牡丹', '小甲鱼', '小布丁', '黑夜', '迷途', '竹林小溪', 'Crazy迷恋']
+del member[1]
+print(member)
+
+del member #可以删除整个列表
+
+member = ['牡丹', '小甲鱼', '小布丁', '黑夜', '迷途', '竹林小溪', 'Crazy迷恋']
+print(member.pop())#Crazy迷恋
+print(member)#['牡丹', '小甲鱼', '小布丁', '黑夜', '迷途', '竹林小溪']
+print(member.pop(1))#小甲鱼
+print(member)#['牡丹', '小布丁', '黑夜', '迷途', '竹林小溪']
+
+member = ['牡丹', '黑夜', '迷途', '竹林小溪']
+#分片
+print(member[1:3])#['黑夜', '迷途']
+#不写0，默认从0开始
+print(member[:3])#['牡丹', '黑夜', '迷途']
+print(member[1:])#['黑夜', '迷途', '竹林小溪']
+print(member[:])#什么都不写得到列表的拷贝 #['牡丹', '黑夜', '迷途', '竹林小溪']
+
+#有的情况想对列表进行修改，但又不想更改原来的列表，就利用：，复制一个列表
+member2 = member[:]
+print(member2)#['牡丹', '黑夜', '迷途', '竹林小溪']
+
+
+
+##P13 数组3 列表的常用操作符
+list1 = [123]
+list2 = [234]
+print(list1 > list2)#False
+
+    #有多个元素的时候，默认从第0个元素开始比较
+list1 = [123, 456]
+list2 = [234, 123]
+print(list1 > list2)#False
+
+    #逻辑判断
+list3 = [123, 456]
+print((list1 < list2) and (list1 == list3))#True
+
+    #连接
+list4 = list1 + list2
+print(list4)#[123, 456, 234, 123]
+#相当于extend 扩展列表 用list.extend()会更为规范， 因为+不能添加新元素， 例如数字+字符串就不行
+
+list3 = [123, 456]
+print(list3*3)#[123, 456, 123, 456, 123, 456]
+
+list3 *= 3
+print(list3)
+
+list3 *= 5
+print(list3)#这里的list3*=5 为什么是15次，？ 因为list3已经变为含有3次的了，再乘以5变成15次。
+
+print(123 in list3)#True
+
+print('小甲鱼' not in list3)#True
+
+list5 = [123, ['小甲鱼', '牡丹'], 456]
+print('小甲鱼' in list5)#False '小甲鱼'是在list 的list里
+print('小甲鱼' in list5[1])#True
+print(list5[1][0])#牡丹 #外面列表里1的值，里面列表里1的值，
+
+print(dir(list))
+
+print(list3.count(123)) #15
+
+#list.index 会返回参数所在的位置，
+print(list3.index(123))#0 只显示了第0 位的。
+print(list3.index(123,3,7))# index(参数，参数起始位置，参数结束位置) #4 同样也只显示在这个范围里第一次出现的位置
+
+list3.reverse()
+print(list3)#[456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123, 456, 123]
+
+list6 = [4,2,5,1,9,23,32,0]
+list6.sort()
+print(list6)#[0, 1, 2, 4, 5, 9, 23, 32]
+#那么从2到小排列呢？
+list6.reverse()
+print(list6)#[32, 23, 9, 5, 4, 2, 1, 0]
+#太麻烦换一种
+
+list6 = [4,2,5,1,9,23,32,0]
+list6.sort(reverse=1)
+print(list6)#[32, 23, 9, 5, 4, 2, 1, 0]
+
+#使用分片可以创建list的一个拷贝
+list7 = list6[:]
+print(list7)#[32, 23, 9, 5, 4, 2, 1, 0]
+list8 = list6
+print(list8)#[32, 23, 9, 5, 4, 2, 1, 0]
+list6.sort()
+print(list6)#[0, 1, 2, 4, 5, 9, 23, 32]
+print(list7)#[32, 23, 9, 5, 4, 2, 1, 0]
+print(list8)#[0, 1, 2, 4, 5, 9, 23, 32]
+#list8属于浅拷贝，没有开辟新的内存空空间，他们一个是赋值，一个是引用
+#list8 = list6 实际上只是添加一个新的标签指向list6
+#list7 = list6[:] 是实实在在的对list6 进行了一个拷贝
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
