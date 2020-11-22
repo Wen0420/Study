@@ -762,6 +762,120 @@ print(list8)#[0, 1, 2, 4, 5, 9, 23, 32]
 #list7 = list6[:] 是实实在在的对list6 进行了一个拷贝
 
 
+#homework 010
+#动动手0
+member = ['小甲鱼', '黑夜', '迷途', '怡静', '秋舞斜阳']
+member.insert(1, 88)
+member.insert(3,90)
+member.insert(5,85)
+member.insert(7,90)
+member.append(88)
+print(member)
+
+
+
+#方法二，复制列表？
+
+#010 1
+for item in member:
+    print(item)
+
+#010 2 ?
+#方法一：
+count = 0
+length = len(member)
+while count < length:
+    print(member[count], member[count + 1])
+    count += 2
+
+count = 0
+length = len(member)
+while count < length:
+    count += 2
+    print(member[count], member[count + 1])
+#IndexError: list index out of range
+
+count = 0
+length = len(member)
+while count < length:
+    print(member[count], member[count + 1])
+#如果不加打印条件程序就会一直循环打印，小甲鱼，88
+
+member = ['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+print(len(member))#10
+print(member[count])#NameError: name 'count' is not defined
+
+count = 0
+member = ['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+print(len(member))#10
+print(member[count])#小甲鱼
+print(member[count], member[count + 1])#小甲鱼 88
+
+count += 2
+print(member[count], member[count + 1])#迷途 85
+
+count += 1
+print(member[count], member[count + 1])#85 怡静
+
+
+#方法二：
+
+for each in range(len(member)):
+    if each % 2 == 0:
+        print(member[each], member[each + 1])
+
+member = ['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+for item in range(len(member)):
+    print(item)
+#这是竖着打印0123456789
+
+member = ['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+print(member)#['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+
+member = ['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+for item in member:
+    print(member)#打印了十次这个列表#['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+
+for item in member:
+    print(item)#竖着打印了member列表里面的每一项
+
+member = ['小甲鱼', 88, '黑夜', 90, '迷途', 85, '怡静', 90, '秋舞斜阳', 88]
+print(len(member))#
+print(range(len(member)))#range(0, 10) 生成以10结束，的数字序列
+
+
+
+#练习#2
+name = ['F', 'i', 's', 'h']
+name.append(['.', 'C'])
+print(name)
+#['F', 'i', 's', 'h', ['.', 'C']]
+
+
+name.extend(['.', 'C'])
+print(name)
+#['F', 'i', 's', 'h', '.', 'C']
+
+#请看以下示例：
+
+name = ['F', 'i', 's', 'h']
+name.append('C')
+print(name)
+name.extend(['.', 'c'])
+print(name)
+name.append(['.', 'c'])
+print(name)
+
+
+#homework 011
+list1 = [1, 3, 2, 9, 7, 8]
+print(len(list1))#6, 但如果数位置的话只到第5位
+print(list1[0:6])
+print(list1[2:5])#[2, 9, 7]
+print(list1[0:6:2])#[1, 2, 7]
+
+
+
 
 
 
