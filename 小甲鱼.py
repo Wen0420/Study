@@ -818,8 +818,10 @@ count += 1
 print(member[count], member[count + 1])#85 怡静
 
 
-#方法二：
+#方法二：重新创建一个同名字的列表覆盖。
 
+
+#看一下
 for each in range(len(member)):
     if each % 2 == 0:
         print(member[each], member[each + 1])
