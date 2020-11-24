@@ -1050,3 +1050,31 @@ for each in list3:
 print(list1[0])#1.Just do it
 print(list1[2:])#['3.让编程改变世界', '4. Impossible is Nothing']
 
+#P14 元组：一个不可改变的类型
+
+tuple1 = (1, 2, 3, 4, 5, 6, 7, 8)
+print(tuple1)#(1, 2, 3, 4, 5, 6, 7, 8)
+
+print(tuple1[5:])#(6, 7, 8)
+print(tuple1[:5])#(1, 2, 3, 4, 5)
+
+#也可以用冒号进行元组的切片操作
+tuple2 = tuple1[:]
+print(tuple2)#(1, 2, 3, 4, 5, 6, 7, 8)
+
+tuple1[1] = 3
+#TypeError: 'tuple' object does not support item assignment
+
+#小括号是否就代表元组？
+#举个例子
+temp = [1]
+print(temp)#[1]
+type(temp)#<class 'list'>
+
+temp = (1)
+print(temp)#1
+type(temp)#<class 'int'>
+
+temp2 = 2, 3, 4
+type(temp2)#<class 'tuple'>
+#所以对于元组来说，是关键 （）不是关键
