@@ -1078,3 +1078,28 @@ type(temp)#<class 'int'>
 temp2 = 2, 3, 4
 type(temp2)#<class 'tuple'>
 #所以对于元组来说，是关键 （）不是关键
+
+#想要创建一个空元组
+##先看一下空列表
+temp = []
+type(temp)#<class 'list'>
+
+##创建一个空元组
+temp = ()
+type(temp)#<class 'tuple'>
+
+#如果要创建的元素只有一个元素，那么要确保它后面有‘，’
+##看下例子
+temp = (1,)
+print(temp)#(1,)
+type(temp)#<class 'tuple'>
+
+temp = 1,
+print(temp)#(1,)
+type(temp)#<class 'tuple'>
+
+print(8 * (8))#64
+
+print(8 * (8,))#(8, 8, 8, 8, 8, 8, 8, 8)
+
+
