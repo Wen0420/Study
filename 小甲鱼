@@ -291,26 +291,111 @@ int 函数可以把字符串类型的数字进行转换成可以比较大小和�
         逻辑操作符 and or，成员操作符in not in，拼接操作符 +， 重复操作符 *， 关系操作符><,
 
 #P 15 字符串，各种奇葩的内置方法
-    capitalize() 把字符串的第一个字符改为大写
+        capitalize() 把字符串的第一个字符改为大写
 
-    str1 = 'I love fishc.com'
-    print(str1[:6])#I love
-    print(str1[5])#e
-    print(str1[:6] + '插入字符串' + str1[6:])#I love插入字符串 fishc.com
+        str1 = 'I love fishc.com'
+        print(str1[:6])#I love
+        print(str1[5])#e
+        print(str1[:6] + '插入字符串' + str1[6:])#I love插入字符串 fishc.com
 
-    str2 = 'xiaoxie'
-    print(str2.capitalize())#Xiaoxie
+        str2 = 'xiaoxie'
+        print(str2.capitalize())#Xiaoxie
 
-    str2 = 'XIAOxie'
-    print(str2.casefold())#xiaoxie
-            ##注意每次都是返回一个新的字符串
+        str2 = 'XIAOxie'
+        print(str2.casefold())#xiaoxie
+                ##注意每次都是返回一个新的字符串
 
-    #center(width) 自动填充长度
-    str2 = 'XIAOxie'
-    print(str2.center(40))#                XIAOxie
+        #swapcase()#大写变小写，小写变大写
+        str2 = 'XIAOxie'
+        print(str2.swapcase())#xiaoXIE
 
-    #count(sub[start[,end]]) 返回子字符串在字符串里出现的次数
-    print(str2.count('xi'))#1
+        #center(width) 居中 自动填充长度
+        str2 = 'XIAOxie'
+        print(str2.center(40))#                XIAOxie
+
+        #ljust(width) 左对齐
+        print(str2.ljust(40))#XIAOxie
+
+        ##lstrip() 去掉字符传中左边所有的空格
+        str2 = '         XIAOxie'
+        print(str2.lstrip())#XIAOxie
+
+        ##rstrip() 去掉字符传中右边（末尾）所有的空格
+        str2 = '         XIAOxie          '
+        print(str2.rstrip())#         XIAOxie
+
+        #strip() 去除左右空格，但中间空格不去除
+        str2 = '     a    k    '
+        print(str2.strip())#a    k
+        #给定参数
+        str2 = '    ssss aa aasss  '
+        print(str2.strip('s'))#    ssss aa aasss
+
+        str2 = '    ssssaaaasss  '
+        print(str2.strip('s'))#    ssssaaaasss
+
+
+        str2 = 'ssssaaaasss'
+        print(str2.strip('s'))#aaaa
+
+
+        #count(sub[start[,end]]) 返回子字符串在字符串里出现的次数
+        print(str2.count('xi'))#1
+
+        #endswith 检查字符串是否以子字符串结尾
+        print(str2.endswith('xi'))#False
+        print(str2.endswith('e'))#True
+
+        #expendtabs([tabsize=8]) 把字符串中的tab号（\t）转换为空格，如不指定参数，默认空格tabsize = 8
+        str3 = 'I\tlove\tFishC.com!'
+        print(str3.expandtabs())#I       love    FishC.com! 前面一部分包含I有8个空格， 后面一部分包含love有8个空格
+
+        str3 = 'I   love    FishC.com!'
+        print(str3.expandtabs())#I   love    FishC.com!
+
+        #find(sub[,start[,end]]) 检查sub是否包含在字符串中，如果有则返回索引值， 否则返回-1
+        print(str3.find('stf'))#-1
+        print(str3.find('o'))#5
+
+        #rfind(sub[,start[,end]]) 类似于find方法，但它是从右边查找
+        print(str3.find('stf'))#-1
+        print(str3.find('o'))#5
+
+        #index(sub[,start[,end]]) 和find 方法一样，只不过如果sub 不再string 中会产生异常
+        print(str3.index('stf'))#ValueError: substring not found
+        print(str3.index('o'))#5
+
+        #islower
+        str5 = '小甲鱼'
+        print(str5.islower())#False
+
+        #join(sub) 以字符串作为分隔符，插入到sub 中所有的字符之间
+        str5 = 'Fishc'
+        print(str5.join(12345))#TypeError: can only join an iterable
+
+        str5 = 'Fishc'
+        print(str5.join('12345'))#1Fishc2Fishc3Fishc4Fishc5
+
+        #partition 把字符串 按照参数隔开
+        str6 = 'I love fishc'
+        print(str6.partition('ov'))#('I l', 'ov', 'e fishc')
+
+        #replace(old,new[,count) 把旧的字符串换成新的字符串， 如果指定了第三个参数则替换不超过这个count次
+        print(str6.replace('fishc','FishC'))#I love FishC
+
+        #split()自动切片操作， 不带参数默认是以空格作为操作符
+        print(str6.split())#['I', 'love', 'fishc']
+
+        print(str6.split('i'))#['I love f', 'shc']
+
+        #translate(table)
+        str7 = 'sssssaaaasssss'#希望把s 转成b
+        print(str7.translate(str.maketrans('s', 'b')))#bbbbbaaaabbbbb
+
+        print(str.maketrans('s', 'b'))#{115: 98} 返回一个字典，中间的数字是：ACSII阿斯特码
+
+#P16
+
 
 
 
