@@ -1114,6 +1114,28 @@ print(temp)#('小甲鱼', '黑夜', '怡静', '迷途', '小布丁')
 del temp
 print(temp)#NameError: name 'temp' is not defined
 
+##P 15 字符串，各种奇葩的内置方法
+str1 = 'I love fishc.com'
+print(str1[:6])#I love
+print(str1[5])#e
+print(str1[:6] + '插入字符串' + str1[6:])#I love插入字符串 fishc.com
+
+str2 = 'xiaoxie'
+print(str2.capitalize())#Xiaoxie
+
+str2 = 'XIAOxie'
+print(str2.casefold())#xiaoxie
+        ##注意每次都是返回一个新的字符串
+
+#center(width) 自动填充长度
+str2 = 'XIAOxie'
+print(str2.center(40))#                XIAOxie
+
+#count(sub[start[,end]]) 返回子字符串在字符串里出现的次数
+print(str2.count('xi'))#1
+
+
+
 
 
 
