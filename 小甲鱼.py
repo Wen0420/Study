@@ -1414,8 +1414,25 @@ print(zip(a,b))#<zip object at 0x000001ADE17E6888>#返回的还是对象
     #接下来把对象变成列表
 print(list(zip(a,b)))#[(1, 4), (2, 5), (3, 6), (4, 7), (5, 8)]
 
+print(a.pop())#8
+print(a)#[1, 2, 3, 4, 5, 6, 7]
 
 
+#013 homework
+#5. x, y, z = 1, 2, 3 请问x, y, z是元组吗？
+x,y,z = 1, 2, 3
+print(type(x))#<class 'int'>
+
+h = x, y, z
+print(type(h))#<class 'tuple'>
+
+# 013 7
+tuple1 = (x**2 for x in range(10))
+#误打误撞得到了一个生成器：
+print(type(tuple1))#<class 'generator'>
+
+print( tuple1.__next__())#0
+print( tuple1.__next__())#1
 
 
 
