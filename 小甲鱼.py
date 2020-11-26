@@ -1377,6 +1377,48 @@ number = [1, 3, 4, -7]
 number.append('a')
 print(number)#[1, 3, 4, -7, 'a']
 
+#sum()
+tuple2 = (3.1, 2.3, 3.4)
+print(sum(tuple2))#8.8
+
+numbers = [1, 3, 5, 3.6, 'a']
+print(sum(numbers))#TypeError: unsupported operand type(s) for +: 'float' and 'str'
+
+numbers = [1, 3, 5, 3.6, 'a']
+numbers.pop()
+print(numbers)#[1, 3, 5, 3.6]
+numbers.pop()
+print(sum(numbers))#9
+
+numbers = [1, 3, 5, 3.6, 'a']
+numbers.pop()
+numbers.pop()
+print(sum(numbers))#9
+print(sum(numbers, 8))#17
+
+#reversed()
+#和list.reverse()
+#类似，返回的和sort不一样，返回的是迭代器对象，但我们可以间接的用list的方式把它转换为列表
+print(reversed(numbers))#<list_reverseiterator object at 0x000001ADE17E6148>
+print(list(reversed(numbers)))#[5, 3, 1]
+
+#            enumerate() 枚举：生成由每个元素的index值和item值组成的元组
+print(enumerate(numbers))#<enumerate object at 0x000001ADE17B8B88>
+#用list方式，强制转换为list
+print(list(enumerate(numbers)))#[(0, 1), (1, 3), (2, 5)]#加了每个元素index的索引值
+
+#            zip() 返回由各个参数的序列组成的元组
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+b = [4, 5, 6, 7, 8]
+print(zip(a,b))#<zip object at 0x000001ADE17E6888>#返回的还是对象
+    #接下来把对象变成列表
+print(list(zip(a,b)))#[(1, 4), (2, 5), (3, 6), (4, 7), (5, 8)]
+
+
+
+
+
+
 
 
 
