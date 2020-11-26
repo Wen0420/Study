@@ -510,6 +510,31 @@ int 函数可以把字符串类型的数字进行转换成可以比较大小和�
         \\
         反斜杠
 
+# P17 序列
+    *列表、元素和字符串的共同点：
+        -都可以通过索引得到每一元素
+        -默认的索引值都是从0开始的
+        -可以通过分片的方法的得到一个范围内的元素的集合
+        -有很多共同的操作符（重复操作符*、拼接操作符+，成员关系操作符in& not in）
+
+        列表、元素和字符串: 统称为序列
+
+        关于序列的常用内置方法（BIF）
+            list() 把一个可迭代对象转换成列表
+             |  list(iterable=(), /)#interable意思是可迭代的， 它是一个迭代器，
+                    迭代就是重复反馈过程的活动，目的是接近并达到所需的目标或者结果。
+                        每一次对过程的重复我们称之为迭代， 每一次迭代的结果都会作为下次重复过程的初始值。
+
+             |
+             |  Built-in mutable sequence.
+             |
+             |  If no argument is given, the constructor creates a new empty list.
+             |  The argument must be an iterable if specified.
+
+
+
+
+
 
 
 
