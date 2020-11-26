@@ -1230,7 +1230,7 @@ print("{a} love {b}.{c}".format(a="I", b="FishC", c="com"))#I love FishC.com
 print("{0} love {b}.{c}".format("I", b="FishC", c="com"))#I love FishC.com
 #注意：位置参数必须在关键字参数前
 
-print("{a} love {b}.{0}".format(a="I", b="FishC", "com"))#SyntaxError: positional argument follows keyword argument
+print("{a} love {b}.{0}".format(a="I", b="FishC", ))#SyntaxError: positional argument follows keyword argument
 
 #如何将花括号打印出来呢？
 #\t 是打印一个tab 位置
@@ -1247,6 +1247,54 @@ print('{0:.1f}(1)'.format(27.678, 'GB'))#27.7(1)
 
 print('{0:.1f}{1}'.format(27.678, 'GB'))#27.7GB
 #这里格式表示应该是：0.1f,f是定点数和float 是类似的， 也就是只留，一位小数（四舍五入）
+
+
+#字符串格式化符号含义
+# %c 它格式化字符及其ASCII码
+print('%c' % 97)#a
+#python 接受字典和元组的输入
+
+#如果有多个参数要用元组的方式括起来
+print('%c' '%c' '%c' % (97, 98, 99))#abc
+
+# %s 是格式化字符串
+print('%s' % 'I love FishC.com')#I love FishC.com
+
+#%d 格式化整数
+print('%d + %d = %d' % (4, 5, 4+5))#4 + 5 = 9
+
+print('%d + %d = %d' % (4, 5, 6))#4 + 5 = 6
+
+print('%d + %d = %d' % (4, 5, 9))#4 + 5 = 9
+
+# %o 格式化无符号八进制数
+#A0 = 10*16^1 + 0 *16*0 = 160
+print('%o' % 10)#12 #这里是把十进制的10转换成了八进制
+#八进制转换为十进制公式：2*8^0 + 1* 8^1 = 10
+
+#十六进制是abc 小写x大写X ABC，
+print('%x' % 10)#a
+
+print('%X' % 10)#A
+
+print('%X' % 160)#A0
+
+# %f表示格式化定点数，可指定小数点后的精度
+print('%f' % 27.658)#27.658000
+#浮点数默认精确到六位小数
+
+# %e 使用科学计数法来格式化定点数
+print('%e' % 27.658)#2.765800e+01
+
+print('%E' % 27.658)#2.765800E+01
+
+# %g 根据值的大小来决定使用%f或%e
+print('%g' % 27.658)#27.658
+
+
+
+
+
 
 
 
