@@ -1335,6 +1335,48 @@ help(list)
 a = list()
 print(a)#[]
 
+b = 'I love fishC.com'
+b = list(b)
+print(b)#['I', ' ', 'l', 'o', 'v', 'e', ' ', 'f', 'i', 's', 'h', 'C', '.', 'c', 'o', 'm']
+#右边赋值给左边， 所以先调用list方法，参数是一个字符串， 然后把字符串迭代，成为一个列表，赋值回这个b
+
+c = (1, 1, 2, 3, 5, 8, 13, 18, 21, 34)
+c = list(c)
+print(c)
+#[1, 1, 2, 3, 5, 8, 13, 18, 21, 34]#把元组变成了列表
+#实现的过程大概就是说：先新建一个列表然后通过循环，每次循环通过这个索引或者说每次迭代的结果把它插入到列表里面就可以了
+
+help(tuple)
+
+a = list()
+print(len(a))#0
+
+b = 'I love fishC.com'
+b = list(b)
+print(len(b))#16
+
+print(max(1,2,3))#3
+
+print(max(b))#v 因为每一个字符后面都有一个阿斯卡码
+
+number = [1, 3, 4 -7]
+print(min(number))#-3
+
+number = [1, 3, 4, -7]
+print(min(number))#-7
+
+chars = '1234567890'
+print(min(chars))#0
+
+tuple1 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+print(min(tuple1))#0
+print(max(tuple1))#9
+# 使用max, min 序列和参数的数据类型要是统一的。
+
+number = [1, 3, 4, -7]
+number.append('a')
+print(number)#[1, 3, 4, -7, 'a']
+
 
 
 

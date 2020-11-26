@@ -531,6 +531,28 @@ int 函数可以把字符串类型的数字进行转换成可以比较大小和�
              |  If no argument is given, the constructor creates a new empty list.
              |  The argument must be an iterable if specified.
 
+            tuple([interable]) 把一个可迭代的对象转换为元组
+
+            str(odj)把obj对象转换成字符串
+
+            len(sub)返回sub这个参数的长度
+
+            max() 返回序列或者参数集合中的最大值
+
+            min() 返回序列或者参数集合中的最小值
+                # 使用max, min 序列和参数的数据类型要是统一的。
+
+                max 的实现原理：max(tuple1)
+                max = tuple1[0]
+
+                for each in tuple1:
+                    if each > max:
+                        max = each
+                return max
+                #初始值为0，通过迭代，将每一个和max比较，如果下一个比他大，那么max 就等于它的值，整个索引完成后就得到真正的最大值
+
+                
+
 
 
 
