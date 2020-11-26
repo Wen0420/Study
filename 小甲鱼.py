@@ -1218,6 +1218,38 @@ print(str.maketrans('s', 'b'))#{115: 98} 返回一个字典，中间的数字是
 
 
 
+#P16 格式化
+    #replacement
+print("{0} love {1}.{2}".format("I", "FishC", "com"))#I love FishC.com
+#format 方法是需要参数的， 这里的0，1，2是位置参数，我们需要给它三个参数
+
+print("{a} love {b}.{c}".format("I", "FishC", "com"))#KeyError: 'a'
+#a,b,c是关键字参数
+print("{a} love {b}.{c}".format(a="I", b="FishC", c="com"))#I love FishC.com
+
+print("{0} love {b}.{c}".format("I", b="FishC", c="com"))#I love FishC.com
+#注意：位置参数必须在关键字参数前
+
+print("{a} love {b}.{0}".format(a="I", b="FishC", "com"))#SyntaxError: positional argument follows keyword argument
+
+#如何将花括号打印出来呢？
+#\t 是打印一个tab 位置
+print('\ta')#	a
+
+#打印反斜杠用\\
+print('\\')#\
+
+#打印{} 这里的{}相当于把参数转换成字符而不是位置参数
+print("{{0}}".format("不打印"))#{0}
+#“不打印”是因为没有字段可以被输出的
+
+print('{0:.1f}(1)'.format(27.678, 'GB'))#27.7(1)
+
+print('{0:.1f}{1}'.format(27.678, 'GB'))#27.7GB
+#这里格式表示应该是：0.1f,f是定点数和float 是类似的， 也就是只留，一位小数（四舍五入）
+
+
+
 
 
 
