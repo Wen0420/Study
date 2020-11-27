@@ -1627,6 +1627,50 @@ for each in score:
 if IsFind == False:
     print('查找的数据不存在！')
 
+#动动手
+# 0.
+# 猜想一下
+# min()
+# 这个BIF的实现过程
+
+
+def min(x):
+    least = x[0]
+
+    for each in x:
+        if each < least:
+            least = each
+
+    return least
+
+
+print(min('123456789'))
+
+#注：关于函数的定义和使用在下一讲的课程中讲解，目前只需要理解该BIF实现的原理即可。
+
+
+# 1.
+# 视频中我们说
+# sum()
+# 这个BIF有个缺陷，就是如果参数里有字符串类型的话就会报错，请写出一个新的实现过程，自动“无视”参数里的字符串并返回正确的计算结果
+
+
+def sum(x):
+    result = 0
+
+    for each in x:
+        if (type(each) == int) or (type(each) == float):
+            result += each
+        else:
+            continue
+
+    return result
+
+
+print(sum([1, 2.1, 2.3, 'a', '1', True]))
+
+
+
 
 
 
