@@ -1574,7 +1574,59 @@ while q:
         print('十进制 -> 二进制 : %d -> ' % num, bin(num))
     else:
         q = False
-        
+
+
+
+###016 homework
+'''
+请问分别使用什么BIF，可以把一个可迭代对象转换为列表、元组和字符串？
+
+list([iterable])
+把可迭代对象转换为列表
+
+tuple([iterable])
+把可迭代对象转换为元组
+
+str(obj)
+把对象转换为字符串
+
+例如：
+'''
+temp = 'I love FishC.com!'
+print(list(temp))
+#['I', ' ', 'l', 'o', 'v', 'e', ' ', 'F', 'i', 's', 'h', 'C', '.', 'c', 'o', 'm', '!']
+
+'''
+2.
+你还能复述出“迭代”的概念吗？
+
+所谓迭代，是重复反馈过程的活动，其目的通常是为了接近并到达所需的目标或结果。每一次对过程的重复被称为一次“迭代”，而每一次迭代得到的结果会被用来作为下一次迭代的初始值。
+'''
+
+# 3.
+# 你认为调用
+max('I love FishC.com')
+# 会返回什么值？为什么？
+#
+# 会返回：'v'，因为字符串在计算机中是以ASCII码的形式存储（ASCII对照表：http: // bbs.fishc.com / thread - 41199 - 1 - 1.
+# html），参数中ASCII码值最大的是
+# 'v'
+# 对应的118。
+
+#4
+name = input('请输入待查找的用户名：')
+score = [['迷途', 85], ['黑夜', 80], ['小布丁', 65], ['福禄娃娃', 95], ['怡静', 90]]
+IsFind = False
+
+for each in score:
+    if name in each:
+        print(name + '的得分是：', each[1])
+        IsFind = True
+        break
+
+if IsFind == False:
+    print('查找的数据不存在！')
+
 
 
 
