@@ -1434,6 +1434,34 @@ print(type(tuple1))#<class 'generator'>
 print( tuple1.__next__())#0
 print( tuple1.__next__())#1
 
+print("I love FishC.com!")
+
+
+
+#014 homework
+#2
+file1 = open('C:\windows\temp\readme.txt', 'r')#OSError: [Errno 22] Invalid argument: 'C:\\windows\temp\readme.txt'
+
+
+file1 = open(r'C:\windows\temp\readme.txt', 'r')#FileNotFoundError: [Errno 2] No such file or directory: 'C:\\windows\\temp\\readme.txt'
+
+str1 = '<a href="http://www.fishc.com/dvd" target="_blank">鱼C资源打包</a>'
+
+#014 3
+str1 = '<a href="http://www.fishc.com/dvd" target="_blank">鱼C资源打包</a>'
+print(str1[16:29])
+
+#014 4
+print(str1[-45:-32])
+
+#014 5
+print(str1[20:-36])
+
+#014 6
+str1 = 'i2sl54ovvvb4e3bferi32s56h;$c43.sfc67o0cm99'
+print(str1[::3])
+#::3?
+
 
 
 
