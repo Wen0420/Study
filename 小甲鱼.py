@@ -1537,7 +1537,44 @@ while 1:
     \t3. 密码长度不能低于16位")
     break
 
+#015
 
+#1.
+#请问以下这行代码会打印什么内容？
+print("{{1}}".format("不打印", "打印"))
+#'{1}'
+
+
+# 2.
+# 以下代码中，a, b, c是什么参数？
+print("{a} love {b}.{c}".format(a="I", b="FishC", c="com"))
+#'I love FishC.com'
+
+
+#3.
+# 以下代码中，{0}, {1}, {2}
+# 是什么参数？
+print( "{0} love {1}.{2}".format("I", "FishC", "com"))
+#'I love FishC.com'
+
+
+# 4.
+# 如果想要显示Pi = 3.14，format前边的字符串应该怎么填写呢？
+print('{0}{1:.2f}'.format('Pi = ', 3.1415))
+'Pi = 3.14'
+
+#0. 编写一个进制转换程序
+q = True
+while q:
+    num = input('请输入一个整数(输入Q结束程序)：')
+    if num != 'Q':
+        num = int(num)
+        print('十进制 -> 十六进制 : %d -> 0x%x' % (num, num))
+        print('十进制 -> 八进制 : %d -> 0o%o' % (num, num))
+        print('十进制 -> 二进制 : %d -> ' % num, bin(num))
+    else:
+        q = False
+        
 
 
 
