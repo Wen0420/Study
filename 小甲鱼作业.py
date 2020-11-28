@@ -2253,3 +2253,62 @@ print(sum([1, 2.1, 2.3, 'a', '1', True]))
 
 
 '''
+
+'''
+用 Python 设计第一个游戏 | 课后测试题及答案
+x+jGue[?0
+^x'AQ1_t76=ybO)h,$sJ&RZzn
+问答题：版权属于：https://fishc.com.cn
+R5fq.QB"'4#x+(j8NhSGcsbp%027;|
+0. IDLE 的交互模式和编辑器模式有什么区别？uDKe8Utw
++db<5EAwPq?8}%Jg(4TVj,
+i(7o$slZD){PRrK'8eIL;u%t
+1. 在课堂上敲过的代码中，除了 print() 和 input()，你觉得还有哪一个是 Python 的 BIF 内置函数？gQ&:X
+VEOve4P9HIyo8iFrm~u."
+I+E[At$M_'YB?N:UdGHbk^nD)Ti2!>
+2. 请问 print() 和 Print() 的功能一样吗？I^Bk*hjAe
+6Rp"@LGaQds_^D+H:toSE
+D)d{@=rFi2l$_ytfjMG (n
+3. 请统计一下 Python 一共有多少个 BIF 内置函数？MZ*`[cH
+)#O0F&!p6A,>W`82:fyhSo
+y&6wmB0}"7)4pAlTh5P(1D
+4. Tab 键除了用于缩进，你还发现它在 IDLE 中有什么特殊的功能吗？9L&} "+
+@IVD&$H~eb[i|-6x!,Z.P#JO'
+G3|{x6"Q1*^g':]$7C+O9E;emFMq,
+5. 请问下面代码为什么不能正常执行？Powered by https://fishc.com.cn
+C:e3K~{(x-0NADdM*LX7nY9l.VtOH6
+""" 用Python设计第一个游戏 """
+
+temp = input("不妨猜一下小甲鱼现在心里想的是哪个数字：")
+guess = int(temp)
+
+if guess = 8:
+    print("你是小甲鱼心里的蛔虫嘛？！")
+    print("哼，猜中了也没奖励！")
+else:
+    print("猜错啦，小甲鱼现在心里想的是8！")
+   
+print("游戏结束，不玩啦^_^")
+复制代码
+
+1B8`JjL{3'?]iucA}eGSU$r#6!
+动动手：版权属于：https://fishc.com.cn
+;)<#Yi"Z5{r^bvf_X1za*+I
+0. 请在 IDLE 的交互模式中，计算一年有多少秒？[7$K]o
+KpxBA@dkX82QDVrEU# <HTy_6f,{}+
+Y+,jias*@(fv$]GwAh)u
+Y+,jias*@(fv$]GwAh)u
+1. 按下面要求修改课堂中的 game.py 代码。 ?K)E5f[
+QxgVGC-v)Z~sY0^BT|A] HzSy;4t
+让用户输入这次数学考试的成绩。
+如果分数是 100 分，显示：好棒，你离女神又近了一步^_^
+如果分数不是 100 分，显示：小子，想要幸福，就得努力！
+
+程序实现如下：版权属于：https://fishc.com.cn
+vtOH"WVp~$jdJ@i?!=CT<B
+
+[}H&9'42p;hZ<v0*PzV(am!
+?&[n.'R~p@O8YD{l#gNHG63+hS
+图一时之快先看答案，你将失去一次锻炼的机会！tb?
+
+'''
