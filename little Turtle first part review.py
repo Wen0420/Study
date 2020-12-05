@@ -17,3 +17,13 @@ Pros:
 #10: Say “Hello World!” to Machine Learning
 #11: Get Challenged
 '''
+#P1
+
+#idle 交互模式，写一个代码，他会给你一个反馈
+#idle 编辑模式：
+print("Design the first game in python")
+
+temp = input("Can you guess what number I have in mind?")
+guess = int(temp)
+if guess == 8:
+    print()
